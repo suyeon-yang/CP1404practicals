@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 Practical
+CP1404/CP5632 Practical Suggested Solution
 Data file -> lists program
 """
 
@@ -23,13 +23,13 @@ def get_data():
         print(parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
-        print("----------")
+        data.append(parts)
     input_file.close()
     return data
 
 
 def display_subjects(data):
-    """Display an orderly subject data"""
+    """Display orderly subject data."""
     for subject_data in data:
         print("{} is taught by {:12} and has {:3} students".format(*subject_data))
 
