@@ -21,12 +21,14 @@ def main():
 
 
 def celsius_to_fahrenheit(choice):
+    """Converts celsius to fahrenheit."""
     celsius = float(input("Celsius: "))
     fahrenheit = celsius * 9.0 / 5 + 32
     print("Result: {:.2f} F".format(fahrenheit))
 
 
 def fahrenheit_to_celsius(choice):
+    """Converts fahrenheit to celsius."""
     fahrenheit = float(input("Fahrenheit: "))
     celsius = 5 / 9 * (fahrenheit - 32)
     print("Result: {:.2f} F".format(celsius))
