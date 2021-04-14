@@ -1,4 +1,3 @@
-
 MIN_LENGTH = 5
 
 
