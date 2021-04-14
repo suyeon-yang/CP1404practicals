@@ -13,4 +13,7 @@ def determine_score_status(score):
     else:
         print("Bad")
 
+
 main()
+
+
