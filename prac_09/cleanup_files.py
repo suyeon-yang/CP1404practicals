@@ -1,7 +1,7 @@
 
 import shutil
 import os
-
+import re
 
 def main():
     """Demo os module functions."""
@@ -14,7 +14,6 @@ def main():
         print("The file already exist")
 
     for filename in os.listdir('.'):
-        # Ignore directories, just process files
         if os.path.isdir(filename):
             continue
 
@@ -24,8 +23,15 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    first_name = filename.replace(".TXT", ".txt").replace(" ", "_")
+    pattern = "[A-Z]"
+    new_name = re.sub(pattern, lambda x: "_" + x.group(0), first_name)
+    last_name = new_name.replace("__", "_")
+
+    if last_name[0] == "_":
+        m = last_name[1:]
+
+    return m
 
 
 def demo_walk():
@@ -41,6 +47,5 @@ def demo_walk():
             old_name = os.path.join(directory_name, filename)
             new_name = os.path.join(directory_name, get_fixed_filename(filename))
             os.rename(old_name, new_name)
-
 
 main()
