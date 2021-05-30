@@ -48,8 +48,13 @@ def phrase_to_sentence(phrase):
     >>> phrase_to_sentence("hello world")
     'Hello world.'
     >>> phrase_to_sentence("you are pretty")
-    'You are pretty'
+    'You are pretty.'
+    >>> phrase_to_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> phrase_to_sentence("hello")
+    'Hello.'
     """
+
     sentence = phrase.capitalize()
     if sentence[-1] != ".":
         sentence += "."
@@ -57,13 +62,3 @@ def phrase_to_sentence(phrase):
 
 
 doctest.testmod()
-
-# TODO: 5. Write and test a function to format a phrase as a sentence,
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-# 'hello' -> 'Hello.'
-# 'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more you decide (one that is valid!)
-# test this and watch the tests fail
-# then write the body of the function so that the tests pass
